@@ -1,3 +1,5 @@
+# GRADIO INTERFACE TO CONVERT A PDF TO TEXT AND READ IT WITH LANGCHAIN AND OPEN AI ###################################
+import gradio as gr
 import PyPDF2, os, sys, random, time, shutil
 from pypdf import PdfReader
 from llama_index import SimpleDirectoryReader, GPTListIndex, readers, GPTSimpleVectorIndex, LLMPredictor, PromptHelper
@@ -5,15 +7,9 @@ from langchain.chat_models import ChatOpenAI
 from langchain import OpenAI
 import openai
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
-
+directory_path = '/converted_pdf_to_text'
 
 os.environ['OPENAI_API_KEY'] = "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"
-
-async def index ():
-  return {
-    'msg': ':bird: 33-4 :tiger:'
-  }
 
 def extract_info (pdf_file):
   # BEGINS PDF TO TEXT SECTION ###################
@@ -42,12 +38,13 @@ def extract_info (pdf_file):
     chunk_size_limit = 4000
     
     llm_predictor = LLMPredictor(
-        llm = ChatOpenAI(temperature = 0, model_name = 'gpt-3.5-turbo', max_tokens = num_outputs))
+      llm = ChatOpenAI(temperature = 0, model_name = 'gpt-3.5-turbo', max_tokens = num_outputs))
     prompt_helper = PromptHelper(max_input_size, num_outputs, max_chunk_overlap, chunk_size_limit = chunk_size_limit)
     
     documents = SimpleDirectoryReader(directory_name).load_data()
     global index
     index = GPTSimpleVectorIndex(documents, llm_predictor = llm_predictor, prompt_helper = prompt_helper)
+    
     # Remove json file if it exists to make sure it's not using a previous index file as source
     if os.path.exists("index.json"):
       os.remove("index.json")
@@ -60,13 +57,38 @@ def extract_info (pdf_file):
     
     # Remove directory with initial text file
     # shutil.rmtree(directory_name)
-    return "Success! You can now click on the 'Knowledge bot' tab to interact with your document"
+    return ("Success! You can now click on the 'Knowledge bot' tab to interact with your document")
 
 
-def chat (user_input):
+def chat (chat_history, user_input):
   bot_response = index.query(user_input)
   response = ''
   # Show each letter progressively
   for letter in ''.join(bot_response.response):
     response += letter + ""
-    yield [(user_input, response)]
+    yield chat_history + [(user_input, response)]
+
+
+messages = [{"role": "system",
+             "content": """You are a helpful assistant. You help the reader understand documents paraphrasing, quoting and summarizing information. You follow the instructions of the user at all times"""}]
+
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
+with gr.Blocks() as demo:
+  gr.Markdown('Q&A bot for PDF docs. Upload your document, press the button and wait for confirmation of success')
+  
+  with gr.Tab('Input PDF document here'):
+    text_input = gr.File()
+    text_output = gr.Textbox()
+    text_button = gr.Button('Build the bot!')
+    text_button.click(extract_info, text_input, text_output)
+  with gr.Tab('Knowledge bot'):
+    chatbot = gr.Chatbot()
+    message = gr.Textbox(
+      label = 'Ask here your question about the document, then press "enter" and scroll up for response')
+    message.submit(chat, [chatbot, message], chatbot)
+
+demo.queue().launch(debug = True)
+
+if __name__ == "__main__":
+  demo.launch()
