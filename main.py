@@ -1,94 +1,26 @@
-# GRADIO INTERFACE TO CONVERT A PDF TO TEXT AND READ IT WITH LANGCHAIN AND OPEN AI ###################################
-import gradio as gr
-import PyPDF2, os, sys, random, time, shutil
-from pypdf import PdfReader
-from llama_index import SimpleDirectoryReader, GPTListIndex, readers, GPTSimpleVectorIndex, LLMPredictor, PromptHelper
-from langchain.chat_models import ChatOpenAI
-from langchain import OpenAI
-import openai
+from fastapi import FastAPI
+from starlette.middleware.cors import CORSMiddleware
+from routers import api
 
-directory_path = '/converted_pdf_to_text'
+app = FastAPI()
 
-os.environ['OPENAI_API_KEY'] = "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"
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "*"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-def extract_info (pdf_file):
-  # BEGINS PDF TO TEXT SECTION ###################
-  if pdf_file.name.lower().endswith('.pdf'):
-    reader = PdfReader(pdf_file.name)
-    pages = reader.pages
-    extracted_text = [i.extract_text() for i in pages]
-    
-    # WRITING TEXT FILE TO FOLDER ##############
-    directory_name = 'converted_pdf_to_text'
-    if not os.path.exists(directory_name):
-      os.mkdir(directory_name)
-    file_name = 'document_in_txt_format.txt'
-    file_path = os.path.join(directory_name, file_name)
-    with open(file_path, 'w', encoding = 'UTF-8') as f:
-      f.write(str(extracted_text))
-    if os.path.isfile(file_path):
-      print(f'{file_name} created successfully in {directory_name}.')
-    else:
-      print(f"{file_name} creation in {directory_name} failed.")
-    
-    # BEGINS LLM SECTION ##########
-    max_input_size = 4096
-    num_outputs = 500
-    max_chunk_overlap = 200
-    chunk_size_limit = 4000
-    
-    llm_predictor = LLMPredictor(
-      llm = ChatOpenAI(temperature = 0, model_name = 'gpt-3.5-turbo', max_tokens = num_outputs))
-    prompt_helper = PromptHelper(max_input_size, num_outputs, max_chunk_overlap, chunk_size_limit = chunk_size_limit)
-    
-    documents = SimpleDirectoryReader(directory_name).load_data()
-    global index
-    index = GPTSimpleVectorIndex(documents, llm_predictor = llm_predictor, prompt_helper = prompt_helper)
-    
-    # Remove json file if it exists to make sure it's not using a previous index file as source
-    if os.path.exists("index.json"):
-      os.remove("index.json")
-      print("The file 'index.json' has been deleted.")
-    else:
-      print("The file 'index.json' does not exist.")
-    
-    # Save json index to disk from current information
-    index.save_to_disk('index.json')
-    
-    # Remove directory with initial text file
-    # shutil.rmtree(directory_name)
-    return ("Success! You can now click on the 'Knowledge bot' tab to interact with your document")
+@app.get('/')
+async def index():
+    return {
+        'msg': 'API TEST'
+    }
 
-
-def chat (chat_history, user_input):
-  bot_response = index.query(user_input)
-  response = ''
-  # Show each letter progressively
-  for letter in ''.join(bot_response.response):
-    response += letter + ""
-    yield chat_history + [(user_input, response)]
-
-
-messages = [{"role": "system",
-             "content": """You are a helpful assistant. You help the reader understand documents paraphrasing, quoting and summarizing information. You follow the instructions of the user at all times"""}]
-
-openai.api_key = os.getenv("OPENAI_API_KEY")
-
-with gr.Blocks() as demo:
-  gr.Markdown('Q&A bot for PDF docs. Upload your document, press the button and wait for confirmation of success')
-  
-  with gr.Tab('Input PDF document here'):
-    text_input = gr.File()
-    text_output = gr.Textbox()
-    text_button = gr.Button('Build the bot!')
-    text_button.click(extract_info, text_input, text_output)
-  with gr.Tab('Knowledge bot'):
-    chatbot = gr.Chatbot()
-    message = gr.Textbox(
-      label = 'Ask here your question about the document, then press "enter" and scroll up for response')
-    message.submit(chat, [chatbot, message], chatbot)
-
-demo.queue().launch(debug = True)
-
-if __name__ == "__main__":
-  demo.launch()
+app.include_router(
+  api.router,
+  prefix="/bot"
+)

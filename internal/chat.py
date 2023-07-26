@@ -1,26 +1,16 @@
-import PyPDF2, os, sys, random, time, shutil
-from pypdf import PdfReader
-from llama_index import SimpleDirectoryReader, GPTListIndex, readers, GPTSimpleVectorIndex, LLMPredictor, PromptHelper
+import os
+from llama_index import SimpleDirectoryReader, GPTSimpleVectorIndex, LLMPredictor, PromptHelper
 from langchain.chat_models import ChatOpenAI
-from langchain import OpenAI
 import openai
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-
 os.environ['OPENAI_API_KEY'] = "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"
 
-async def index ():
-  return {
-    'msg': ':bird: 33-4 :tiger:'
-  }
-
-def extract_info (pdf_file):
+def extract_info (text):
   # BEGINS PDF TO TEXT SECTION ###################
-  if pdf_file.name.lower().endswith('.pdf'):
-    reader = PdfReader(pdf_file.name)
-    pages = reader.pages
-    extracted_text = [i.extract_text() for i in pages]
+  if text != "":
+    extracted_text = text
     
     # WRITING TEXT FILE TO FOLDER ##############
     directory_name = 'converted_pdf_to_text'
@@ -62,11 +52,10 @@ def extract_info (pdf_file):
     # shutil.rmtree(directory_name)
     return "Success! You can now click on the 'Knowledge bot' tab to interact with your document"
 
-
 def chat (user_input):
   bot_response = index.query(user_input)
   response = ''
   # Show each letter progressively
   for letter in ''.join(bot_response.response):
     response += letter + ""
-    yield [(user_input, response)]
+  return response
