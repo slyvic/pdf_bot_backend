@@ -1,26 +1,31 @@
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 from routers import api
+from util.class_object import singleton
+from core.config import configs
 
-app = FastAPI()
+@singleton
+class AppCreator:
+    def __init__(self):
+        # set app default
+        self.app = FastAPI()
+        # set cors
+        if configs.BACKEND_CORS_ORIGINS:
+            self.app.add_middleware(
+                CORSMiddleware,
+                allow_origins=["http://localhost:3000"],
+                allow_credentials=True,
+                allow_methods=["*"],
+                allow_headers=["*"],
+            )
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
-        "*"
-    ],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+        # set routes
+        @self.app.get("/")
+        def root():
+            return "service is working"
 
-@app.get('/')
-async def index():
-    return {
-        'msg': 'API TEST'
-    }
+        self.app.include_router(api.router, prefix=configs.API_V1_STR)
 
-app.include_router(
-  api.router,
-  prefix="/bot"
-)
+
+app_creator = AppCreator()
+app = app_creator.app

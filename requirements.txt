@@ -44,3 +44,7 @@ uc-micro-py==1.0.1
 uvicorn==0.21.1
 websockets==10.4
 yarl==1.8.2
+sqlalchemy
+passlib
+bcrypt
+pyjwt
