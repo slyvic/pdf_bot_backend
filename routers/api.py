@@ -16,6 +16,7 @@ router = APIRouter()
 
 class Context(BaseModel):
   text: str | None = None
+
 class User(BaseModel):
   id: int = -1
   name: str | None = None

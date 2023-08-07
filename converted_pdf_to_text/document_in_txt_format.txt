@@ -1,154 +1,581 @@
-WORK EXPERIENCE
+Kevin Chasey
 
-10/2021 - 02/2023
-,
+Toronto, ON M4W 1J7
 
-Created Backup, secure, and restore service that organizes
+k
+onya.
+mitsuo
+@gmail.com
 
-data automatically
+A passionate senior full
+-
+stack engineer with 6+ years of experience in software engineering.
 
-Took the responsibility to mentor 3 people in the front-end
+Always love challenges and hard working to achieve goals.
 
-development
+Have advanced knowledge of multiple programming languages, frameworks and extensive familiarity
 
-Implemented performance tuning techniques on stored
+with several database structures.
 
-procedures and back-end queries which resulted in a 73%
+As a Team Leader for many years, I have successfully completed many tasks.
 
-improvement in application performance
+Work Experience
 
-GraphGrid, Inc.
+Full Stack Engineer
 
-02/2019 - 08/2021
-,
+Self
+-
+Freelan
+cing
+
+January 2023 to May 2023
+
+[React.js | Next.js | TypeScript | Tailwind CSS | Node.js |Google Firebase| Web3]
+
+•
  
-Wooster, Ohio, United States
+Assessed and reviewed all pull requests created by other teammates to ensure the quality and
 
-Designed and developed whole architecture of front-end
+accuracyof the code.
 
-websites using JavaScript frameworks including
-
-React.js/Next.js, Angular and Vue.js/Nuxt.js
-
-Develop clean, user-friendly interfaces with implementation of
-
-features, supporting cross-browser functionality, utilizing APIs
-
-Develop Responsive Websites that could be served by desktop,
-
-Tablets and mobile devices
-
-RevStar Consulting
-
-10/2017 - 09/2018
-,
+•
  
-Tempa, Florida, United States
+I have been responsible for bu
+ilding both the frontend and backend for the web application, as well
 
-Develop and test User Interfaces for Mobile/Tablet/Desktop
+asoversight onto technical decisions for the project.
 
-using HTML/HTML5, CSS/CSS3, LESS
-
-Create Custom Reusable Components Library
-
-Communicate and Prepare mock-ups and storyboards
-
-EDUCATION
-
-Bachelor's Degree / Computer Science
-
-Universität Hamburg
-
-04/2008 - 03/2013
-,
+•
  
-Mittelweg 177 Hamburg, Germany
+Integrated enhancements into web design to improve user stickiness, smooth functionality.
 
-SKILLS
-
-Git Hub, Git Lab, Bit Bucket
-
-VOLUNTEER EXPERIENCE
-
-Taroko
-
-05/2015 - 07/2017
-,
+•
  
-Paris, France
+Assisted backend developers with troubleshooting and problem solving.
 
-Develop Web site architecture
+Full Stack Engineer
 
-Source, select and organize info for the appearance, layout and
+Freelancer.com
 
-flow of the Web site
+September 2022 to January 2023
 
-Create and optimize content for the Web site using a variety of
+[React.js | Next.js | Chakra UI | Express.js | MySQL |Ether.js | Graph
 
-database, and other software
+| Solidity]
 
-Working with the team to deliver high-quality products within
+•
+ 
+Collaborated
+ 
+with
+ 
+engineering
+ 
+team
+ 
+to
+ 
+review
+ 
+application
+ 
+requirements,
+ 
+planned
 
-the timeline
+implementationdetails and estimated delivery timelines.
 
-Achievements/Tasks
+•
+ 
+Brought in shipping confidence for the app and improved our deployment pipeline by implementing
 
-Achievements/Tasks
+atesting harness in Jest and Enzyme covering over 75% of clien
+t code, configuring linting with ESLint
 
-Achievements/Tasks
+and formatting with Prettier for overall code quality.
 
-Tasks/Achievements
+•
+ 
+Created NFT market place based on Next.js and Express.js.
 
-New York, New York, United States
+•
+ 
+Worked on Web3 integration using ethers.js and web3.js.
 
-Highly accomplished and user-focused Full-Stack Mobile And Web Developer adept in collaborating with UX and design teams to plan
+•
+ 
+Audited market place smart contract developed w
+ith solidity.
 
-the technical writing and execution of functional specifications for websites and applications. Experienced in building multi-platform
+Senior Python Engineer
 
-websites and mobile app using Responsive.
+Self
+-
+Freelancing
 
-seniordev1207@gmail.com
+April 2022 to August 2022
 
-Peachtree Corners, United States
+•
+ 
+Referencing and citing DLTK.
 
-live:.cid.5b57935152d9801b
+•
+ 
+To ease into the subject, I wrote a quick overview blog entry for the new TensorFlow.
 
-Javascript, Typescript
+•
+ 
+It is developed to enable fast prototyping with a low entry t
+hreshold and ensure reproducibility in
 
-Clojure, Java
+imageanalysis applications, with a particular focus on medical imaging.Senior Python Developer
 
-HTML5, CSS, BootStrap, JQuery
+Freelancer.com
 
-React.js, Next.js, GraphQL
+November 2021 to February 2022
 
-Vue.js, Nuxt.js, Angular.js
+•
+ 
+Knowledge of PyTorch, convolutional neural networks.
 
-Dart, Swift, React-Native
+•
+ 
+I ended up using a batch size of 8 images for increased stability.
 
-Android, I
-O
-S
+•
+ 
+I also doubled the learning rate for bias parameters.
 
-Unity, C
-#
-, Godot
+•
+ 
+New unpaired image
+-
+to
+-
+image translation model that enables fast and memory
+-
+efficient training.
 
-Django, Flask, Torando
+•
+ 
+Image
+-
+to
+-
+Image Translation with Conditio
+nal Adversarial Networks.
 
-Node.js, Express.js, Nest.js
+•
+ 
+Studied the way CycleGANs are able to learn such great translations without having explicit X/Y
 
-GCP, AWS
+trainingimages.
 
-Senior Full Stack Developer
+Unity Game Developer
 
-Senior Full-Stack Developer
+Upwork.com
 
-Self-Freelancing
+April 2021 to October 2021
 
-Front End Developer
+•
+ 
+Developed
+ 
+real
+-
+time
+ 
+strategy
+ 
+online
+ 
+game
+ 
+called
+ 
+'Ageofkingdom'
+ 
+using
+ 
+Unity3D
+ 
+and
+ 
+PHP
 
-Full Stack Developer
+serverframework.
 
-Front End Developer
+•
+ 
+Developed multiplayer online battle game similar to 'Brawl Stars' using Photon and Pomelo.
 
-Denis Morata
+•
+ 
+Developed online farming game using Unity3D.
+
+•
+ 
+Authored code fixe
+s and enhancements for inclusion in future code releases and patches.
+
+•
+ 
+Participate in software development and support of Unity Development.
+
+•
+ 
+Developed an real
+-
+time strategy game using Unity3D.
+
+•
+ 
+Developed online io game similar to agar.io using Node.js.
+
+•
+ 
+Devel
+oped several mobile game including farming, racing, FPS.
+
+•
+ 
+Conducted database modeling, performance and integration testing.
+
+•
+ 
+Designed and developed simple multiplayer racing game using Unreal Engine 4.
+
+•
+ 
+Tested functional compliance of company products.
+
+Senior Software Engineer
+
+Upwork.com
+ 
+-
+ 
+United States
+
+October 2020 to May 2021
+
+•
+ 
+Excellent system programming skills on Microsoft Windows/Linux/MacOS platforms.
+
+•
+ 
+Experience of Multi
+-
+threading and building real
+-
+time systems.
+
+•
+ 
+Ability to deliver time
+-
+saving soluti
+ons to tight deadlines.
+
+•
+ 
+Database experience: Oracle, MongoDB, MySQL, SQLite and PostgreSQL
+
+Full Stack Engineer
+
+Clarika Group
+ 
+-
+ 
+San Francisco, CA
+
+January 2020 to September 2020
+
+[Angular.js | Ionic | Nest.JS | PostgreSQL | AWS S3]
+
+•
+ 
+Enforced
+ 
+Agile
+ 
+and
+ 
+Scrum
+ 
+de
+velopment
+ 
+methodologies
+ 
+on
+ 
+interface
+ 
+projects
+ 
+to
+ 
+shorten
+
+developmenttimes.
+
+•
+ 
+Implemented 100% pixel
+-
+perfect, responsive mobile app with Angular.js, Ionic.
+
+•
+ 
+Worked on backend using Nest.js.
+
+•
+ 
+Authored over 200 individual tests across 70 test suites to react 80%
+ 
+code coverage.
+
+•
+ 
+Collaborated with stakeholders during development processes to confirm creative proposals and
+
+designbest practices.
+
+Senior Software Developer
+
+Self
+-
+FreelancingDecember 2018 to October 2019
+
+•
+ 
+Implementation of new services, applications and dem
+onstrating them.
+
+•
+ 
+Identifying and analyze performance bottlenecks and rectifying them.
+
+•
+ 
+Technical design and documentation of new applications.
+
+•
+ 
+Involvement in analysis and design meetings.
+
+•
+ 
+Creating new applications for a data collection, maintenance & processing team.
+
+•
+ 
+Responsible for requirements capture, design, coding, testing, installation.
+
+•
+ 
+Unit testing of all new code and developing device drivers or kernels.
+
+•
+ 
+Providing support & maintena
+nce of existing software.
+
+React & React Native Developer
+
+CreativeSims
+ 
+-
+ 
+[React
+
+March 2018 to August 2018
+
+| React Native | Redux | GraphQL | Apollo]
+
+•
+ 
+Maintained high
+-
+level expertise in React state management strategies.
+
+•
+ 
+Built user interfaces for a re
+-
+imagine
+d user experience using React and Node.js
+
+•
+ 
+Implemented 100% pixel
+-
+perfect, responsive and smart front
+-
+end UI.
+
+•
+ 
+Cooperated with the back
+-
+end team in their development of RESTful APIs.
+
+•
+ 
+Completed React Native app for android and ios.
+
+•
+ 
+Participated in software field testing to verify in
+-
+situ performance of developed projects.
+
+Education
+
+Bachelor of Mathematics in Mathematics
+
+University of Toronto
+ 
+-
+ 
+Toronto, OH
+ 
+February
+
+2012 to November 2017
+
+Bachelor's degree in Computer Science
+
+The University of Hong Kong
+ 
+-
+ 
+Hong Kong, HK
+
+March 2009 to October 2011
+
+Skills
+
+•
+ 
+NFT
+
+•
+ 
+CSS
+
+•
+ 
+C#
+
+•
+ 
+React
+
+•
+ 
+Machine learning
+
+•
+ 
+PyTorch
+
+•
+ 
+Python
+
+•
+ 
+MongoDB
+
+•
+ 
+Next.js•
+ 
+Threejs
+
+•
+ 
+Node
+
+•
+ 
+Agile
+
+•
+ 
+APIs
+
+•
+ 
+DEX
+
+•
+ 
+Django
+
+•
+ 
+TensorFlow
+
+•
+ 
+Java
+
+•
+ 
+Deep learning
+
+•
+ 
+HTML5
+
+•
+ 
+BlockChain
+
+•
+ 
+JavaScript
+
+•
+ 
+MySQL
+
+•
+ 
+Golang
+
+•
+ 
+ERC20
+
+•
+ 
+C/C++
+
+•
+ 
+Git
+
+•
+ 
+Android
+
+•
+ 
+Image processing
+
+•
+ 
+TypeScript
+
+•
+ 
+AWS
+
+Certifications and Licenses
+
+Driver's License
