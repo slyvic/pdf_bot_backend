@@ -5,7 +5,7 @@ import openai
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-os.environ['OPENAI_API_KEY'] = "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"
+os.environ['OPENAI_API_KEY'] = "your open api key"
 
 def extract_info (text):
   # BEGINS PDF TO TEXT SECTION ###################
