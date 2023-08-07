@@ -7,7 +7,7 @@ from starlette import status
 
 SECRET_KEY = "basilisk"
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 30
+ACCESS_TOKEN_EXPIRE_MINUTES = 30 * 24 * 60
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl = "login")
 
