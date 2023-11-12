@@ -1,6 +1,6 @@
 # pdf_bot_backend
 
-Using OpenAI and Python, I have developed a chatbot backend that can upload PDFs and provide answers based on the content of those PDFs.
+### Using OpenAI and Python, I have developed a chatbot backend that can upload PDFs and provide answers based on the content of those PDFs.
 
 Python version
 ```
